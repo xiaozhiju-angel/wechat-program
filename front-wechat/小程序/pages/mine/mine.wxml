@@ -1,0 +1,181 @@
+<view class="container">
+<view class='exter_top'>
+  <view class='top'>
+     <view class='top_left'>
+     <icon class="ico" type='success'></icon>
+     <text class='first' bindtap='first_page'>首页</text>
+     </view>
+      <view class='own'><text bindtap='own_page' data-id='{{centers}}' bindtap='mine'>个人中心</text></view>
+      <view class='exit'><text bindtap='jump_first'>退出</text></view>
+  </view>
+  </view>
+  <view class='head'>
+    <image class='pic' src='/images/booklogo.png' mode='center'></image>
+      <view>{{userId}}</view>
+  </view>
+  <view class="operative">
+    <view class='oper'> 
+       <!-- <view class='mental'><button>基本资料</button></view>
+       <view class='mental'><button>修改资料</button></view>
+       <view class='mental'><button>修改密码</button></view>
+       <view class='mental'><button>在借图书</button></view>
+       <view class='mental'><button>借阅记录</button></view> -->
+       <view class='mental' bindtap='change_State'>基本资料</view>
+       <view class='mental' bindtap='change_info'>修改资料</view>
+       <view class='mental' bindtap='change_pwd'>修改密码</view>
+       <view class='mental' bindtap='borrow_now'>在借图书</view>
+       <view class='mental' bindtap='borrow_record'>借阅记录</view> 
+    </view>
+  </view>
+  <view class="show" wx:if='{{showView}}'>
+  <form bindsubmit='show'> 
+   <view class='show_id'>
+     <text>学院</text>
+     <input name='dpartments' value='{{depart}}' disabled='true'></input>
+   </view>
+   <view class='show_id'>
+     <text>专业</text>
+     <input name='professional' value='{{prof}}' disabled='true'></input>
+   </view>
+   <view class='show_id'>
+     <text>电话</text>
+     <input name='phone' value='{{tel}}' disabled='true'></input>
+   </view>
+   <view class='show_id'>
+     <text>邮箱</text>
+     <input name='email' value='{{ emaile}}'></input>
+   </view>
+    <view class='show_id'>
+     <text>借阅上限</text>
+     <input name='borrow_max' value='{{max}}' disabled='true'></input>
+   </view>
+    <view class='show_id'>
+     <text>借阅期限</text>
+     <input name='borrow_time' value='{{date}}' disabled='true'></input>
+   </view>
+    <view class='show_id'>
+     <text>已借数量</text>
+     <input name='borrow_number' value='{{num}}' disabled='true'></input>
+   </view>
+    <view class='show_id'>
+      <button form-type='submit'>显示个人信息</button>
+    </view>  
+  </form>
+   </view> 
+
+  <view class='change_info' wx:if='{{change_info}}'>
+  <form bindsubmit='changeinfo'>
+     <view class='show_id'>
+        <text>用户编号</text>
+      <input name='userid' value=''></input>
+   </view>
+    <view class='show_id'>
+     <text>电话</text>
+     <input name='phone' value=''></input>
+   </view>
+   <view class='show_id'>
+     <text>邮箱</text>
+     <input name='email' value=''></input>
+   </view>
+   <view class='exter_btn'><button class='btn' form-type='submit'>确认修改</button></view>
+   </form>
+  </view>
+
+ <view class='change_pwd' wx:if='{{change_pwd}}'>
+ <form bindsubmit='changepass'>
+    <view class='show_id'>
+        <text>用户编号</text>
+      <input name='userid' value=''></input>
+   </view>
+    <view class='show_id'>
+     <text>原密码</text>
+     <input name='id' value=''></input>
+   </view>
+   <view class='show_id'>
+     <text>新密码</text>
+     <input name='newpass' value=''></input>
+   </view>
+   <view class='show_id'>
+     <text>确认密码</text>
+     <input name='againpass' value=''></input>
+   </view>
+   <view class='exter_btn'><button class='btn' form-type='submit'>确认修改</button></view>
+   </form>
+ </view>
+<!-- 在借图书 -->
+<view class='exter_borrow' wx:if='{{borrow_now}}'>
+ <view class='borrow'>
+ <!-- <view class='borrow_out'>
+    <text >已借:</text>
+    <text class='borrow_number'>4</text> 
+    <text>本</text>
+ </view> -->
+ <!-- <view class='borrow_in'>
+    <text>剩余可借:</text>
+    <text class='borrow_number'>6</text>
+    <text>本</text>
+ </view>  -->
+  <form bindsubmit='borrowbookinfo'>
+    <view class='key'>
+        <view class='sear'> <label>用户编号</label><input name='userid' type='text' value=''></input></view>
+        <view class='btn_sear'> <button form-type='submit'>搜索</button></view> 
+    </view>
+  </form>
+
+ </view>
+
+ <view class='borrow_info' wx:if='{{showinfo}}'>
+    <view class='table'>
+      <view class="tr bg-w"> 
+          <!-- <view class='th'>借阅号</view>
+          <view class='th'>图书名</view>
+          <view class='th'>应还日期</view> -->
+         
+                          <view class='td'>书名</view>
+                          <view class='td'>借阅号</view>
+                          <view class='td'>图书编号</view>  
+                          <view class='td'>应还时间</view>  
+      </view>
+     
+      <view class="tr bg-g" wx:for='{{col}}'>
+        <!-- <view class='td'>{{item.code}}</view>
+        <view class='td'>{{item.id}}</view>
+        <view class='td'>{{item.book_id}}</view>
+        <view class='td'>{{item.rdate}}</view> -->
+       
+                          <view class='td'>{{item.BookName}}</view>
+                          <view class='td'>{{item.BorrowId}}</view>
+                          <view class='td'>{{item.bookId}}</view>  
+                          <view class='td'>{{item.shouldTime}}</view> 
+                       
+      </view>
+  </view>
+  </view>
+ </view>
+<!-- 借阅记录 -->
+<view class='record' wx:if='{{borrowrecord}}'> 
+<form bindsubmit='Borrowrecord'>
+    <view class='key'>
+        <view class='sear'> <label>用户编号</label><input name='userid' type='text' value=''></input></view>
+        <view class='btn_sear'> <button form-type='submit'>搜索</button></view> 
+    </view>
+  </form>
+ <view class='borrow_info' >
+    <view class='table'>
+      <view class="tr bg-w">
+          <view class='td'>书名</view>
+          <view class='td'>借阅号</view>
+          <view class='td'>图书编号</view>  
+         <view class='td'>借阅状态</view> 
+      </view>
+      <view class="tr bg-g" wx:for='{{brrr}}'>
+       <view class='td'>{{item.BookName}}</view>
+        <view class='td'>{{item.BorrowId}}</view>
+        <view class='td'>{{item.BookId}}</view>  
+         <view class='td'>{{item.State}}</view> 
+      </view>
+    </view>
+  </view>
+  </view>
+  <view class='bottom_title'>@Copyright重庆理工大学中山图书馆</view>
+</view>

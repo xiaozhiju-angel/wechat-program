@@ -1,0 +1,250 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding:  0rpx 0;
+  box-sizing: border-box;
+} 
+.exter_top{
+  text-align: center; 
+  width: 100%;
+  background: #45aaac; 
+  height: 40px; 
+}
+.top{  
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-around;
+   margin-top: 5px; 
+}  
+.own{ 
+  margin-top: 5px; 
+}
+.exit{   
+  margin-top: 5px; 
+}
+.head{
+  text-align: center;
+}
+.pic{
+  margin-top:40px;
+  margin-bottom: 5px; 
+   width: 70px;
+   height: 50px;
+}
+.operative{
+  text-align: center; 
+  font-size: 12px; 
+  margin-top:30px;
+}
+.oper{  
+  color: white;
+}
+.mental{
+   /* margin: 5px;  */
+   float: left;  
+  background: white;
+  border: solid;
+  border-color: blue;
+  font-size: 12px; 
+  color: blue;
+}
+.mental{
+  margin: 5px;
+  background: white; 
+  border: solid;  
+  border-color: blue;
+}
+/* 基本资料界面 */
+.show{
+  margin-top: 30px;
+  border: solid;
+  border-color: #24e;
+  width: 96%;
+  border-radius: 10px;
+  text-align: center;  
+}
+.show_id{
+   display: flex;
+   flex-direction: row;
+   margin: 25px;
+   font-size: 14px;
+}
+.show_id text{
+  width:40%;
+  text-align: left;  
+  margin-left: 18px;
+  margin-top: 6px;
+}
+.show_id input{ 
+  width:100%;
+  height:5px; 
+  color: black;
+  border: solid;
+  border-color: gray;
+  border-radius: 5px; 
+  margin-right: 20px; 
+  text-align: center;
+}
+/* 修改资料界面 */
+.change_info{
+  margin-top: 30px;
+  border: solid;
+  border-color: #24e;
+  width: 96%;
+  border-radius: 10px;
+  text-align: center;  
+}
+.exter_btn{
+  text-align: center;
+  
+}
+.btn{
+  width: 100px;
+  height: 35px;
+  line-height: 30px;
+  text-align: center;
+  color: red; 
+   border: solid;
+   border-color: burlywood;
+  font-size: 16px;
+  margin-bottom: 10px; 
+}
+/* 修改密码界面 */
+.change_pwd{
+  margin-top: 30px;
+  border: solid;
+  border-color: #24e;
+  width: 96%;
+  border-radius: 10px;
+  text-align: center; 
+}
+/* 在借图书 */
+.exter_borrow{
+  width: 96%;
+  border: solid;
+  border-color: blue; 
+  margin-top: 30px;
+  border-radius: 8px; 
+}
+.borrow{ 
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+  margin-bottom: 10px;  
+  margin-top: 10px; 
+}  
+.key{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin: 20px;
+}
+.key .sear{
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  width: 60%; 
+  
+}
+.key .sear label{
+  width: 80px;
+  font-size: 12px;
+  color: brown;
+  line-height: 30px;
+}
+.key .sear input{
+  border: 1px solid brown;
+  width: 100%;
+  height: 30px; 
+   font-size: 12px;
+   margin-right: 30px;
+  color: brown;
+}
+.key  .btn_sear{
+ width: 20%;
+ font-size: 12px;
+ height: 30px;
+ line-height: 30px; 
+}
+.key  .btn_sear button{
+ width: 60px;
+ font-size: 12px;
+ height: 30px;
+ line-height: 30px; 
+}
+.borrow .borrow_out{   
+  margin-left: 25px;  
+  font-weight: bold;
+}
+.borrow .borrow_in{ 
+ margin-left: 20px; 
+ font-weight: bold; 
+}
+.borrow_number{
+  color: blue; 
+}
+.borrow_info{
+  width: 100%;
+  margin-top: 5px; 
+}
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex; 
+  width: 100%; 
+}
+.td {
+    width:40%; 
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    margin: 5px;
+    height: 2rem; 
+}  
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  width: 40%;
+  text-align: center;
+  font-size: 14px;
+  background: #3366FF;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+/* 借阅记录 */
+.record{
+  width:96%; 
+  border: solid;
+  border-color: blue;
+  border-radius: 8px;
+  margin-top: 30px; 
+}
+.bottom_title{
+  background: blue;
+  margin-top: 20px;
+  width: 100%; 
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+}
+/* .hide{
+  display: none;
+}
+.show{
+  display: none;
+} */

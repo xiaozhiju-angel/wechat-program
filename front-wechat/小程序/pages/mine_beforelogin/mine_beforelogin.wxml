@@ -1,0 +1,53 @@
+<view> 
+ <view class='top'>
+    <view class='head'>
+       <image bindtap='jump_login' src='/images/head.png'></image> 
+       <view class='username'>{{loginstate}}</view>
+    </view>
+    <view class='personal'>个人中心</view>
+    <view class='more' bindtap='morefunc'>></view>
+ </view>  
+ <view class='div_func'></view>
+ <view class='bottom_first'>
+     <view class='left'>
+       <view >社区</view>
+    </view>
+    <view class='more' bindtap='morefunc'>></view> 
+ </view>
+ <view class='div_func'></view>
+ <view class='bottom'>
+    <view class='left'>
+       <view>设置</view>
+    </view>
+    <view class='more' bindtap='morefunc'>></view> 
+ </view>
+ <view class='div_func'></view>
+ <view class='bottom'>
+    <view class='left'>
+       <view>帮助与客服</view>
+    </view> 
+    <view class='more' bindtap='morefunc'>></view> 
+ </view>
+ <view class='div_func'></view>
+ <view class='bottom'>
+    <view class='left'>
+       <view>问题与建议</view>
+    </view>  
+    <view class='more' bindtap='morefunc'>></view> 
+ </view> 
+ <view class='div_func'></view>
+ <view class='bottom'>
+    <view class='left'>
+       <view>检查更新</view>
+    </view>  
+    <view class='more' bindtap='morefunc'>></view> 
+ </view>
+ <view class='div_func'></view>
+ <view class='bottom'>
+    <view class='left'>
+       <view>关于</view>
+    </view>  
+    <view class='more' bindtap='morefunc'>></view> 
+ </view>
+ <view class='div_func'></view>
+</view>

@@ -1,0 +1,381 @@
+ <view class='border'>
+ <view class='top_total'>
+ <view class='top_left'><image src='/images/logo.png'></image></view>
+ <view class='top_right'>
+    <view class='systemadmin_info'>
+     <image src='/images/head.png'></image>
+     <view class='admin' bindtap='admin_center'>{{systemmanagerId}}</view>
+     <view class='exit' bindtap='back_first'>退出</view>
+    </view>
+ </view> 
+ </view> 
+ <view class='total'> 
+   <view class='left'>
+          <view bindtap='new_reader' style="color:{{color_newreader}}">录入新读者</view>
+          <view bindtap='delete_reader' style="color:{{color_deletereader}}">删除读者</view>
+          <view bindtap='change_reader' style="color:{{color_changereader}}">修改读者信息</view>
+          <view bindtap='new_bookadmin' style="color:{{color_newbookadmin}}">录入图书管理员</view>
+          <view bindtap='delete_bookadmin' style="color:{{color_deletebookadmin}}">删除图书管理员</view>
+          <view bindtap='change_bookadmin' style="color:{{color_changebookadmin}}">修改管理员信息</view>
+          <view bindtap='look_reader' style="color:{{color_lookreader}}">查看读者信息</view>
+          <view bindtap='look_bookadmin' style="color:{{color_lookbookadmin}}">查看管理员信息</view>
+          <view bindtap='admin_center' style="color:{{color_admincenter}}">查询用户权限</view>
+   </view>
+   <view class='right'>
+       <!-- 录入新读者 -->
+        <view class='out' wx:if='{{new_reader}}'>
+            <view class='in_top'>
+                 <text bindtap='finger'style='color:{{Color}}'>手动输入</text>
+                 <text bindtap='batch_import' style='color:{{color}}'>批量导入</text>
+            </view>
+            <view class='divide'></view> 
+        </view> 
+        <!-- 手动输入 -->
+        <view class='finger_input' wx:if='{{finger}}'>
+        <form bindsubmit='newreader_add'>
+        <view class='in_bottom'>
+               <view class='first'>
+                  <label>用户编号</label>
+                  <input name='userid'></input>
+               </view>
+               <view class='first'>
+                  <label>用户名</label>
+                  <input name='username'></input>
+               </view>
+               <view class='first'>
+                 <label>密码</label>
+                  <input name='password'></input>
+               </view>
+               <view class='first'>
+                  <label>确认密码</label>
+                  <input name='againpassword'></input>
+               </view>
+               <!-- <view class='first'>
+                  <label>电话</label>
+                  <input name='tel'></input>
+               </view>
+               <view class='first'>
+                  <label>邮箱</label>
+                  <input name='emaile'></input>
+               </view>
+               <view class='first'>
+                  <label>借阅上限</label>
+                  <input  focus='false' value='10'></input>
+               </view>
+               <view class='first'>
+                  <label>借阅期限</label>
+                  <input focus='false' value='30'></input>
+               </view> -->
+               <view class='first'>
+                   <button form-type='submit'>确认添加</button> 
+                   <button form-type='reset'>取消</button> 
+               </view> 
+            </view> 
+           </form>
+        </view>
+        <!-- 删除读者 -->
+        <view class='delete' wx:if='{{delete_reader}}'>
+         <form bindsubmit='deletereader_add'>
+        <view class='in_bottom'>
+               <view class='first'>
+                  <label>借阅号</label>
+                  <input name='readerid'></input>
+               </view>
+               <view class='first'>
+                  <label>用户名</label>
+                  <input name='userid'></input>
+               </view>
+               <view class='first'>
+                  <label>学院</label>
+                  <input name='depart'></input>
+               </view>
+               <view class='first'>
+                  <label>专业</label>
+                  <input name='professional'></input>
+               </view>
+               <view class='first'>
+                  <label>电话</label>
+                  <input name='tel'></input>
+               </view>
+               <view class='first'>
+                  <label>邮箱</label>
+                  <input name='emaile'></input>
+               </view>
+               <view class='first'>
+                  <label>借阅上限</label>
+                  <input  focus='false' value='10'></input>
+               </view>
+               <view class='first'>
+                  <label>借阅期限</label>
+                  <input focus='false' value='30'></input>
+               </view>
+               <view class='first'>
+                   <button form-type='submit'>确认删除</button> 
+                   <button form-type='reset'>取消</button> 
+               </view> 
+            </view> 
+           </form>
+        </view>
+            <!-- 修改读者信息 -->
+        <view class='change' wx:if='{{change_reader}}'>
+        <form bindsubmit='changereader_add'>
+        <view class='in_bottom'>
+               <view class='first'>
+                  <label>借阅号</label>
+                  <input name='readerid'></input>
+               </view>
+               <view class='first'>
+                  <label>用户名</label>
+                  <input name='userid'></input>
+               </view>
+               <view class='first'>
+                  <label>学院</label>
+                  <input name='depart'></input>
+               </view>
+               <view class='first'>
+                  <label>专业</label>
+                  <input name='professional'></input>
+               </view>
+               <view class='first'>
+                  <label>电话</label>
+                  <input name='tel'></input>
+               </view>
+               <view class='first'>
+                  <label>邮箱</label>
+                  <input name='emaile'></input>
+               </view>
+               <view class='first'>
+                  <label>借阅上限</label>
+                  <input name='max'  focus='false' value='10'></input>
+               </view>
+               <view class='first'>
+                  <label>借阅期限</label>
+                  <input name='date' focus='false' value='30'></input>
+               </view>
+               <view class='first'>
+                   <button form-type='submit'>确认修改</button> 
+                   <button form-type='reset'>取消</button> 
+               </view> 
+            </view> 
+           </form>
+            </view>
+            <!-- 录入图书管理员 -->
+        <view class='add_worker' wx:if='{{new_bookadmin}}'>
+        <form bindsubmit='new_admin'>
+        <view class='in_bottom'> 
+                <view class='first'>
+                  <label>用户账号</label>
+                  <input name='adminid'></input>
+               </view>
+               <view class='first'>
+                  <label>用户名</label>
+                  <input name='adminname'></input>
+               </view>
+               <view class='first'>
+                  <label>密码</label>
+                  <input name='adminpassword'></input>
+               </view> 
+                <view class='first'>
+                  <label>确认密码</label>
+                  <input name='againadminpassword'></input>
+               </view> 
+               <view class='first'>
+                  <label>电话</label>
+                  <input name='admintel'></input>
+               </view>
+               <view class='first'>
+                  <label>邮箱</label>
+                  <input name='adminemaile'></input>
+               </view> 
+               <view class='first'>
+                   <button form-type='submit'>确认添加</button> 
+                   <button form-type='reset'>取消</button> 
+               </view>
+            </view>
+            </form>
+            </view>
+            <!-- 删除图书管理员 -->
+        <view class='delete_worker' wx:if='{{delete_bookadmin}}'>
+        <form bindsubmit='delete_admin'>
+         <view class='in_bottom'>
+               <view class='first'>
+                  <label>借阅号</label>
+                  <input name='adminid'  value='输入图书管理员id'></input>
+               </view>
+               <view class='first'>
+                  <label>用户名</label>
+                  <input name='adminname'></input>
+               </view>
+               <view class='first'>
+                  <label>初始密码</label>
+                  <input name='adminpassword'></input>
+               </view> 
+               <view class='first'>
+                  <label>电话</label>
+                  <input name='admintel'></input>
+               </view>
+               <view class='first'>
+                  <label>邮箱</label>
+                  <input name='adminemaile'></input>
+               </view> 
+               <view class='first'>
+                   <button form-type='submit'>确认删除</button> 
+                   <button form-type='reset'>取消</button> 
+               </view>
+            </view>
+            </form>
+            </view>
+            <!-- 修改图书管理员 -->
+        <view class='change_worker' wx:if='{{change_bookadmin}}'>
+         <form bindsubmit='change_admin'>
+        <view class='in_bottom'>
+               <view class='first'>
+                  <label>借阅号</label>
+                  <input name='adminid'  value='输入图书管理员id'></input>
+               </view>
+               <view class='first'>
+                  <label>用户名</label>
+                  <input name='adminname'></input>
+               </view>
+               <view class='first'>
+                  <label>初始密码</label>
+                  <input name='adminpassword'></input>
+               </view> 
+               <view class='first'>
+                  <label>电话</label>
+                  <input name='admintel'></input>
+               </view>
+               <view class='first'>
+                  <label>邮箱</label>
+                  <input name='adminemaile'></input>
+               </view> 
+               <view class='first'>
+                   <button form-type='submit'>确认修改</button> 
+                   <button form-type='reset'>取消</button> 
+               </view>
+            </view>
+            </form>
+            </view>
+             <!-- 管理员中心  -->
+        <!-- <view class='manager_center' wx:if='{{admin_center}}'>
+           <view class='update'>修改资料 </view>
+           <view class='tip'>原密码必填。不修改密码时，新密码、确认密码留空</view>
+        <form bindsubmit='managercenter'>
+        <view class='in_bottom'>
+              <view class='first'>
+                  <label>用户编号</label>
+                  <input name='adid'  value=''></input>
+               </view>
+               <view class='first'>
+                  <label>原密码</label>
+                  <input name='adpass'  value=''></input>
+               </view>
+               <view class='first'>
+                  <label>新密码</label>
+                  <input name='adnewpass'></input>
+               </view>
+               <view class='first'>
+                  <label>确认密码</label>
+                  <input name='againpass'></input>
+               </view> 
+               <view class='first'>
+                  <label>电话</label>
+                  <input name='admintel'></input>
+               </view>
+               <view class='first'>
+                  <label>邮箱</label>
+                  <input name='adminemaile'></input>
+               </view> 
+               <view class='first'>
+                   <button form-type='submit'>确认修改</button> 
+                   <button form-type='reset'>取消</button> 
+               </view>
+            </view>
+            </form>
+            </view> -->
+         <!-- 查询用户权限  -->
+        <view class='manager_center' wx:if='{{admin_center}}'> 
+        <form bindsubmit='manager_center'>
+        <view class='in_bottom'> 
+               <view class='top'>
+                   <input  name='power' value=''></input>
+                   <button class='text' form-type='submit'  >搜索</button>
+               </view> 
+            </view>
+            </form>
+            </view>
+
+            <!-- 查看管理员信息 -->
+            <view class='look' wx:if='{{look_bookadmin}}'>
+               <form bindsubmit='seachadminbyinput'>
+               <view class='top'>
+                   <input  name='admininput' value=''></input>
+                   <button class='text' form-type='submit'  >搜索</button>
+               </view>
+               </form>
+               <view class='record' wx:if='{{showadmins}}'>
+               <view class='center'>
+                  <view class='table'>
+                       <view class='tr'> 
+                          <view class='td'>用户名</view>
+                           <view class='td'>用户密码</view> 
+                          <view class='td'>用户电话</view>  
+                           <view class='td'>用户邮箱</view>  
+                        </view>  
+                      <view class='tr ' wx:for='{{col}}'> 
+                          <view class='td'>{{item.AdName}}</view>
+                          <view class='td'>{{item.AdPassword}}</view>
+                          <view class='td'>{{item.AdPhone}}</view> 
+                          <view class='td'>{{item.adEmail}}</view> 
+                      </view>
+                  </view>
+                </view>
+               </view>
+              
+               <view class='record' wx:if='{{showsystemadmins}}'>
+               <view class='center'>
+                  <view class='table'>
+                       <view class='tr'> 
+                          <view class='td'>用户名</view>
+                           <!-- <view class='td'>管理员密码</view>  -->
+                          <view class='td'>用户电话</view>  
+                           <!-- <view class='td'>用户邮箱</view>   -->
+                        </view>  
+                      <view class='tr ' wx:for='{{system}}'> 
+                          <view class='td'>{{item.AdminName}}</view>
+                          <!-- <view class='td'>{{item.AdminPassword}}</view> -->
+                          <view class='td'>{{item.AdminPhone}}</view> 
+                          <!-- <view class='td'>{{item.adminEmail}}</view>  -->
+                      </view>
+                  </view>
+                </view>
+               </view>
+
+
+            </view> 
+            <!-- 查看读者信息 -->
+            <view class='select' wx:if='{{look_reader}}'>
+             <form bindsubmit='seachreaderbyinput'>
+               <view class='top'>
+                   <input  name='readerinput' value=''></input>
+                   <button class='text' form-type='submit'  >搜索</button>
+               </view>
+              </form>
+            <view class='look_reader_info' wx:if='{{users}}'>
+               <view class='look_table'>
+                     <view class='tr ' > 
+                          <view class='td'>用户名</view> 
+                          <view class='td'>用户密码</view>  
+                        </view> 
+                    <view class='tr' wx:for='{{reader}}'>
+                             <view class='td'>{{item.UserName}}</view>
+                             <view class='td'>{{item.Password}}</view>
+                    </view>
+               </view>
+            </view>
+            </view>
+
+   </view> 
+ </view>
+    <view class='bottom'>@Copyright重庆理工大学中山图书馆</view>  
+ </view>

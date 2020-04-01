@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container"> 
+    <view class='top'>欢迎来到皇家学院图书馆</view>
+    <view >
+         <image src='/images/1.jpg'  mode='aspectFit'></image> 
+    </view> 
+    <view class='look'>
+     <icon class="ico " type="search" size="14"></icon>
+     <input class='input' value='        请输入书籍信息' >  </input>  
+     <button class="search" bindtap='jumptest'>搜索</button>
+     </view> 
+     <view class='show'>
+     <image class="pic" src='/images/3.jpg'></image>
+     <image class="pic" src='/images/2.jpg'></image> 
+     </view>
+     <view class='place'>厦门</view> 
+     </view> 
+    <view class="page">
+  <view class="page__hd">
+  </view>
+  <view class="page__bd"> 
+  <button bindtap="connectWebsocket" type="primary">连接websocket</button> 
+  </view>
+</view>

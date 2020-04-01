@@ -1,0 +1,69 @@
+<!--pages/login_page/login_page.wxml-->
+<view class='total'>
+<view class='bac'><view class='button' bindtap='register'>注册</view></view>
+<view class='top'>
+ <image src='/images/logo.png' mode='scallToFill'></image>
+ <text>中山图书馆欢迎你</text>
+ </view>
+ <view class='center'>
+    <image src='/images/slide-1.jpg' mode='scallToFill'></image>
+ </view>
+ <view> 
+ </view>
+
+     
+            
+     <!-- <view class='worker'>
+     <text>{{user_type}}</text>
+     <image bindtap='show_select' src='/picture/arrow.png' bindtap='login_power'></image>  
+    </view> 
+      <view class='select' wx:if='{{show}}'>  
+        <view class='reader' bindtap='choose_reader'>读者</view> 
+        <view class='div'></view>
+        <view class='bookadmin' bindtap='choose_bookadmin'>图书管理员</view>
+        <view class='div'></view>
+        <view class='systemadmin' bindtap='choose_systemadmin'>系统管理员</view> 
+        <view class='div'></view>
+     </view> 
+    <view class='divide'></view> -->
+     <view class='login'>
+     <view class='test'>
+         <form class='form'  data-id='{{userid}}' bindsubmit='login'>
+         <view class='power'>
+          <view class='select'>
+              <radio-group name='selectway'>
+                 <label > <radio value='{{ra1}}'/>读者</label>
+                 <label > <radio value='{{ra2}}'/>图书管理员</label>
+                 <label > <radio value='{{ra3}}'/>系统管理员</label> 
+              </radio-group>
+          </view> 
+          </view>
+              <view class='user'> 
+                 <label>用户名:</label> <input type='string' name='username' bindinput='usernameInput'></input>
+              </view>
+             <view class='pass'>
+                 <label>密码:</label><input password type='text' name='password' bindinput='passwordInput'></input>
+             </view> 
+             <view class='btn_lr'>
+             <view class='btn_login'><button  form-type='submit'>登录</button></view>
+            <view class='regret'><text>忘记密码?</text></view> 
+            </view>
+         </form>
+    </view> 
+   </view>
+   </view> 
+    <!-- <view class='input_user'>
+     <view class='header'> <image src='/images/head.png'></image></view>
+    <view class='i_user'><input value='账号'></input></view>
+    <view class='dec'><text>*</text></view>
+    </view> 
+    <view class='input_pwd'>
+    <view class='header'> <image src='/images/head.png'></image></view>
+    <view class='i_user'><input value='密码'></input></view>
+    <view class='decp'><text>*</text></view>
+    </view>  --> 
+  
+  <view class='bottom'></view> 
+  <!-- <view class='bottom_blue'></view>  -->
+   
+ 

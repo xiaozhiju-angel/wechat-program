@@ -1,0 +1,102 @@
+/* pages/search_result/search_result.wxss */
+.total{
+  width: 100%;  
+} 
+.top{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: blueviolet; 
+  height: 50px; 
+  color: white; 
+}
+.top .top_left{
+  flex-direction: row; 
+} 
+.top .top_left .first{
+  font-size: 16px;  
+  margin-top: 10px; 
+} 
+.top .login{ 
+  font-size: 16px; 
+  margin-top: 10px;  
+}
+.input{ 
+  display: flex; 
+  justify-content: space-around; 
+  margin-top: 40px;
+  width: 100%; 
+  margin: 40px;
+}
+.input  input{
+  border: solid;
+  border-color: rosybrown;
+  color: brown;
+  font-size: 14px;
+}
+.input button{
+  background:  rosybrown;
+  width: 60px;  
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: center;
+  color: brown;
+}
+.show{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  margin-left: 10px;
+}
+ 
+.book{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px;
+}
+.t_top{
+  font-size: 14px;
+  width: 100%;
+}
+.t_middle{
+  height: 1px; 
+  background: black;
+  width: 100%;
+}
+.t_bottom{
+  width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   font-size: 12px;
+}
+.t_bottom .publish{
+   margin-left: 20px;
+}
+.t_bottom .author{ 
+  display: flex;
+  flex-direction: row; 
+}  
+.t_bottom .publish text{
+  width: 60px;
+  height: 30px; 
+}
+.t_bottom .publish text:nth-child(2){
+  margin-left: 5px;
+}
+.t_bottom .author text:nth-child(2){
+  margin-left: 5px;
+}
+.t_bottom .author .text{
+  width: 60px;
+  height: 30px; 
+}  
+.bottom{
+  height: 50px;
+  background: blueviolet;
+  margin-top: 20px;
+}

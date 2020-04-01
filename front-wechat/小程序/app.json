@@ -1,0 +1,38 @@
+ {
+  "pages":[
+    "pages/login_page/login_page", 
+    "pages/first_page/first_page", 
+    "pages/systemadmin/systemadmin",
+    "pages/reader/reader",
+    "pages/mine/mine", 
+     "pages/mine_beforelogin/mine_beforelogin", 
+    "pages/register/register", 
+    "pages/index/index", 
+    "pages/search_result/search_result", 
+    "pages/swiper/swiper", 
+     "pages/request/request", 
+    "pages/detail/detail",   
+    "pages/logs/logs"  
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#24e",
+    "navigationBarTitleText": "微信",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/first_page/first_page",
+      "text": "首页",
+      "iconPath": "images/dy-1.png",
+      "selectedIconPath": "images/dy.png"
+    },  
+    {
+      "pagePath": "pages/mine_beforelogin/mine_beforelogin",
+      "text": "我的",
+      "iconPath": "images/3.jpg",
+      "selectedIconPath": "images/dy.png"
+    }] 
+  }
+}
+

@@ -1,0 +1,12 @@
+<view >
+
+<view>pages/test/test.xml</view>  
+ <view><text bindtap='gopage' data-id='{{item.id}}' wx:for='{{list}}'>{{item.name}}</text></view>  
+<swiper interval='2000' autoplay='true' duration='500' indicator-active-color='red' indicator-color='blue' circular='true'>
+   <swiper-item wx:for='{{arrSwiper}}'>
+      <navigator url='{{item.url}}'>
+        <image src='{{item.src}}'></image> 
+     </navigator>
+   </swiper-item> 
+ </swiper> 
+</view>

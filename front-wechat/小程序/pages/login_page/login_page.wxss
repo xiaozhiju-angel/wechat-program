@@ -1,0 +1,212 @@
+/* pages/login_page/login_page.wxss */
+.total{
+  width: 100%; 
+}
+.bac{
+  background: blanchedalmond;
+  height: 30px; 
+  width: 100%; 
+}
+.bac .button{ 
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px; 
+  float: right;  
+  color: brown; 
+  margin-right: 22px;
+}
+.top{
+  display: flex;
+  text-align: center; 
+  width: 100%;
+  justify-content: space-around;
+}
+.top image{
+  width: 160px;
+  height:40px; 
+}
+.top text{
+  text-align: center;
+  color: blue;
+  font-size: 13px;
+  font-weight: bold;
+  mask-type: 10px; 
+  height: 40px;
+  line-height: 40px; 
+} 
+.center{ 
+  margin-top: 15px; 
+  width: 100%;
+  text-align: center;
+} 
+.login{   
+  position: absolute;
+  top: 110px; 
+  margin-left: 48px;
+  border: solid;  
+  border-color: goldenrod;  
+  text-align: center;  
+}
+/* .worker{
+  display: flex;
+  text-align: center;
+  height: 30px; 
+  line-height: 30px; 
+  width:100%;
+  margin-left: 50px;
+} 
+.worker text{
+  color: red;
+  font-size: 12px;
+  width: 70%;
+}
+.worker image{
+  width: 8px;
+  height:6px; 
+  margin-top: 11px; 
+  margin-left: 15px;
+}  */
+ /* 登录者设置 */
+/* .select{ 
+  position: fixed;
+  top: 146px; 
+  margin-left: 115px; 
+  flex-direction: column; 
+  text-align: center;  
+  background: white;
+  color: brown;
+  width: 80px;
+  height: 150px;
+  font-size: 12px;   
+}
+.select .div{
+  background: gray;
+  height: 0.5px; 
+  margin-top: 5px; 
+  margin-bottom: 5px;
+}
+.select .reader{
+  margin-top: 5px; 
+  margin-bottom: 5px;
+}
+.select .bookadmin{
+  margin-top: 5px;
+   margin-bottom: 5px;
+}
+.select .systemadmin{
+  margin-top: 5px; 
+  margin-bottom: 5px;
+} 
+.divide{
+  height: 2px;
+  background: blue; 
+  margin-left: 50px;
+  width: 60%;
+} */
+  
+.btn_lr{ 
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;  
+  margin-bottom: 10px; 
+}
+.btn_lr .btn_login{ 
+  height: 20px;  
+}
+.btn_lr .btn_login button{
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  background: gray;
+  color: white;
+}  
+.btn_lr .regret{  
+  height: 30px;
+}
+.btn_lr .regret text{ 
+   height: 30px;
+  line-height: 30px; 
+  color: violet;   
+  font-size: 14px;
+}
+.bottom{
+  background: blanchedalmond;
+  height: 30px;  
+}
+.bottom_blue{
+  background: blue;
+  height: 50px;  
+} 
+ 
+/* 登录表单 */
+.test{  
+  display: flex;
+  flex-direction: row;  
+  margin-top: 15px;
+}
+.test .form{
+  width: 100%;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  color:brown; 
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.test .form .user{
+      width: 80%;
+      text-align: left; 
+      margin-left: 20px;
+      margin-top: 10px;
+}
+.test .form .pass{
+      width: 80%;
+      text-align: left; 
+      margin-left: 20px;
+      margin-top: 5px;
+}
+
+.test .form label{
+    width:80px;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.test .form input{
+    width: 90%;
+    color: white;
+    font-size: 14px;  
+    border: 0.5px solid goldenrod;
+}
+.form .user{
+  display: flex;
+  flex-direction: row;  
+}  
+.form .pass{
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-around;
+}   
+.power{
+  width: 100%;
+  justify-content: space-around;
+}
+ .select{
+  width:90%;
+  display: flex;
+  flex-direction: row;  
+  margin-top: 5px;
+  margin-left: 5px;
+} 
+ .select label{
+  width:80px;
+  color: violet;
+  height: 30px; 
+  font-size: 10px; 
+}
+
+ 

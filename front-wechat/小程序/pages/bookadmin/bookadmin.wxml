@@ -1,0 +1,207 @@
+ <view class='border'>
+ <view class='top_total'>
+ <view class='top_left'><image src='/images/logo.png'></image></view>
+ <view class='top_right'>
+    <view class='systemadmin_info'>
+     <image src='/images/head.png'></image>
+     <view class='admin' bindtap='admin_center'>读者01</view>
+     <view class='exit' bindtap='back_first'>退出</view>
+    </view>
+ </view> 
+ </view> 
+ <view class='total'> 
+   <view class='left'>
+          <view bindtap='reader_borrow' style="color:{{color_readerborrow}}">读者借书</view>
+          <view bindtap='reader_return' style="color:{{color_readerreturn}}">读者还书</view> 
+          <view bindtap='query_borrow' style="color:{{color_queryborrow}}">查阅借阅记录</view>
+          <view bindtap='query_book' style="color:{{color_querybook}}">查阅图书信息</view> 
+          <view bindtap='admin_center' style="color:{{color_admincenter}}">管理员中心</view>
+   </view>
+   <view class='right'>
+       <!-- 读者借书 -->
+       <view class='reader_borrow' wx:if='{{reader_borrow}}'>
+          <view class='in_bottom'>
+               <view class='first'>
+                  <text>借阅号</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>图书编号</text>
+                  <input></input>
+               </view>
+                <view class='first'>
+                  <Button bindtap='prove'>验证</Button>
+                  <Button>清空</Button>
+               </view>
+           </view>
+           <view class='look_borrowinfo' wx:if='{{show_borrowinfo}}'>
+           <view class='table'>
+                <view class='tr'>
+                      <view class='td'>借阅号</view>
+                      <view class='td'>图书名</view>
+                      <view class='td'>应还日期</view>
+                </view>
+                <view class='tr' wx:for='{{info}}'>
+                     <view class='td'>{{item.id}}</view>
+                      <view class='td'>{{item.name}}</view>
+                      <view class='td'>{{item.date}}</view>
+                </view>
+           </view>
+           </view>
+           <view class='btn_sure'><button>确认借阅</button></view> 
+        </view>
+
+        <!-- 读者还书 -->
+        <view class='reader_return' wx:if='{{reader_return}}'>
+        <view class='in_bottom'>
+               <view class='first'>
+                  <text>借阅号</text>
+                  <input></input>
+               </view>
+               <view class='btn_sure'><button>确认归还</button></view> 
+        </view>
+        </view>
+       <!-- 新书入库 -->
+        <view class='out' wx:if='{{in_book}}' >
+            <view class='in_top'>
+                 <text bindtap='finger'style='color:{{Color}}'>手动输入</text>
+                 <text bindtap='batch_import' style='color:{{color}}'>批量导入</text>
+            </view>
+            <view class='divide'></view> 
+        </view> 
+        <!-- 手动输入 -->
+        <view class='finger_input' wx:if='{{finger}}'>
+        <view class='in_bottom'>
+               <view class='first'>
+                  <text>图书编号</text>
+                  <input></input>
+               </view> 
+               <view class='print'>打印编码</view> 
+               <view class='first'>
+                  <text>图书名称</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>作者</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>译者</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>价格</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>ISBN</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>出版社</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>出版日期</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>入库者</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                   <button>确认添加</button> 
+                   <button>取消</button> 
+               </view>
+            </view> 
+            </view> 
+            <!-- 查阅借阅记录 -->
+             
+        <!-- <picker bindchange='pickerchange' range='{{arrpicker}}' range-key='value'>查询分类:{{picker.value}}</picker> -->
+         <form> 
+            <view class='look' wx:if='{{query_borrow}}' >
+                  <view class='top'>
+                   <input value='图书编号/图书名/借阅号'></input>
+                   <text class='search' bindtap='search_record'>搜索</text>
+                  </view>  
+            </view>  
+          </form>
+            <!-- show_record显示时隐藏 -->
+            <view class='display_record' wx:if='{{display_record}}'>
+            <view class='record'>
+               <view class='center'>
+                  <view class='table'> 
+                      <view class='tr ' wx:for='{{col}}'> 
+                          <view class='td'>{{item.name}}</view>
+                          <view class='td'>{{item.info}}</view> 
+                      </view>
+                  </view>
+                </view>
+               </view>
+              </view>
+            <!-- 点击搜索显示 -->
+             <view class='show_record' wx:if='{{show_record}}'>
+             <view class='record'>
+               <view class='center'>
+                  <view class='table'> 
+                      <view class='tr ' wx:for='{{show_info}}'> 
+                          <view class='td'>{{item.name}}</view>
+                          <view class='td'>{{item.info}}</view> 
+                      </view>
+                  </view>
+                </view>
+               </view>
+            </view>
+
+
+            <!-- 查阅图书信息 --> 
+            <view class='select'  wx:if='{{query_book}}'>
+             <view class='top'>
+                   <input value='输入搜索信息'></input>
+                   <text>搜索</text>
+               </view>
+            <view class='look_reader_info' >
+               <view class='look_table'>
+                    <view class='tr' wx:for='{{book}}'>
+                             <view class='td'>{{item.name}}</view>
+                             <view class='td'>{{item.info}}</view>
+                    </view>
+               </view>
+            </view>
+            </view>
+        <!-- 个人中心 -->
+        <view class='manager_center' wx:if='{{admin_center}}' >
+           <view class='update'>修改资料 </view>
+           <view class='tip'>原密码必填。不修改密码时，新密码、确认密码留空</view>
+           <view class='in_bottom'>
+               <view class='first'>
+                  <text>编号</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>用户名</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>初始密码</text>
+                  <input></input>
+               </view> 
+               <view class='first'>
+                  <text>电话</text>
+                  <input></input>
+               </view>
+               <view class='first'>
+                  <text>邮箱</text>
+                  <input></input>
+               </view> 
+               <view class='first'>
+                   <button>确认修改</button> 
+                   <button>取消</button> 
+               </view>
+            </view>
+            </view> 
+   </view> 
+ </view>
+    <view class='bottom'>@Copyright重庆理工大学中山图书馆</view> 
+
+ </view>

@@ -1,0 +1,49 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+} 
+.look{ 
+}
+.ico{
+    float: left; 
+    text-align: left;
+     position: absolute;
+}
+.ico{
+  float: left;
+  margin-top: 5px;   
+}
+.input{ 
+  color: #24e;
+  font-size: 12px;
+  float: left;  
+}
+.search{ 
+  font-size: 12px;
+  width: 60px;
+  height: 22px;
+  line-height: 22px;
+  text-align: top;
+  background: #24e; 
+  color: white;  
+}
+.show{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.place{
+  color: red;
+  font-size: 16px; 
+  margin-top: 10px;  
+}
+.pic{
+  margin: 5px;
+}

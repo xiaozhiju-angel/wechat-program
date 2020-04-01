@@ -1,0 +1,35 @@
+<!--pages/search_result/search_result.wxml-->
+<view class='total'>
+ <view class='top'> 
+    <view class='top_left' > 
+      <view bindtap='jump_first' class='first'>首页</view>
+     </view> 
+     <view class='login' bindtap='jump_login'>登录</view> 
+  </view> 
+  <form bindsubmit='search'>
+   <view class='input'>
+     <input  name='nu' value='{{id}}'></input>
+     <button form-type='submit'>搜索</button>
+  </view>
+  </form>
+  <view class='show' wx:for='{{bookinfo}}'> 
+    <view class='book'>
+       <view class='t_top'>
+       <text >{{item.BookName}}</text>
+       </view>
+       <view class='t_middle'></view>
+       <view class='t_bottom'>
+        <view class='author'>
+         <text>作者:</text>
+         <text>{{item.Author}}</text>
+       </view>
+        <view class='publish'>
+        <text>出版社:</text>
+        <text>{{item.PublishCompany}}</text>
+       </view>
+       </view>  
+  </view>
+  </view> 
+  <view class='bottom'></view> 
+
+  </view>

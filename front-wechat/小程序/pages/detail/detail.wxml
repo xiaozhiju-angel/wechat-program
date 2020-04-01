@@ -1,0 +1,5 @@
+<view>
+ <text>pages/detail/detail.wxml</text>
+ <text>{{id}}</text>
+ <text bindtap='changeStr'>{{str}}</text>
+</view>

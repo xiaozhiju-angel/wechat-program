@@ -1,0 +1,661 @@
+/* pages/mine/mine.wxss */
+.top_total{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+.top_left{
+  width: 120px; 
+  height: 40px; 
+}
+.top_left image{
+  width: 120px; 
+  height: 30px;
+  line-height: 30px; 
+}
+.top_right{ 
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  height: 40px; 
+  background: black;
+} 
+.top_right .systemadmin_info{
+  display: flex;
+  flex-direction:row;  
+}
+.top_right .systemadmin_info image{
+  width: 30px;
+  height:30px; 
+  margin-left: 100px;
+  padding-top: 5px;
+}
+.top_right .systemadmin_info .admin{
+   color: white;
+   font-size: 13px;
+   height: 30px;
+   line-height: 40px;
+   margin-left: 1px;
+}
+.top_right .systemadmin_info .exit{
+   color: white;
+   font-size: 13px;
+   height: 30px;
+   line-height: 40px;
+   margin-left: 15px;
+}
+
+.total{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.left{ 
+  text-align: center;
+  color: blueviolet;
+  font-size: 14px;
+  background: black;  
+}
+.left view{ 
+  background: black; 
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  width: 100px; 
+  height: 30px; 
+  text-align: left;
+  line-height: 30px 
+}
+.right{
+  width:70%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}  
+.bottom{
+  background: black;
+  height: 50px;
+  margin-top: 10px;
+  line-height: 50px;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+}
+/* 读者借书 */ 
+.reader_borrow{
+  width: 100%; 
+  flex-direction: column; 
+}
+.reader_borrow .in_bottom{
+  display: flex;
+  flex-direction: column; 
+  margin-top: 20px;
+} 
+
+ .reader_borrow .in_bottom .first{
+  width: 90%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-left: 20px; 
+}
+.reader_borrow .in_bottom view{
+  margin: 10px;
+}
+ .reader_borrow .in_bottom .first text{
+  font-size: 12px;
+  color: blueviolet;
+  width: 30%;
+  line-height: 25px;
+  text-align: left;
+
+}
+ .reader_borrow .in_bottom .first input{ 
+  border: 1px solid burlywood;
+  width: 100%;
+  color:gray;
+  font-size: 12px;
+}
+ .reader_borrow .in_bottom .first button{
+  font-size: 12px;
+  color: brown;  
+}
+ .reader_borrow .in_bottom .first button:nth-child(1){ 
+    width: 100px; 
+    margin-left: 20px;
+    margin-right: 5px;
+}
+ .reader_borrow .in_bottom .first button:nth-child(2){
+   width: 60px; 
+   margin-right: 15px;
+}  
+.look_borrowinfo .table{ 
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 5px;
+
+}
+.look_borrowinfo .table .tr{ 
+  display: flex;
+  width: 100%; 
+  text-align: center
+}
+.look_borrowinfo .table .td { 
+     width: 60px;
+    font-size: 11px; 
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid blueviolet; 
+} 
+.look_borrowinfo .table .td:nth-child(1){ 
+  flex: 5;  
+}
+.look_borrowinfo .table .td:nth-child(2){   
+  flex: 5;
+}
+.look_borrowinfo .table .td:nth-child(3){  
+  flex: 4;
+}
+.btn_sure{
+  width: 100%;
+  text-align: right;
+  margin-top: 5px;
+}
+.btn_sure button{
+   width: 80px;
+   height: 30px;
+  text-align: right;
+  font-size: 12px;
+  color: blueviolet;
+}
+/* 读者还书 */
+.reader_return{
+  width: 100%; 
+  flex-direction: column;  
+}
+.reader_return .in_bottom{
+  display: flex;
+  flex-direction: column; 
+  margin-top:20px;
+} 
+
+ .reader_return .in_bottom .first{
+  width: 90%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-left: 20px; 
+}
+.reader_return .in_bottom view{
+  margin: 10px;
+}
+ .reader_return .in_bottom .first text{
+  font-size: 12px;
+  color: blueviolet;
+  width: 30%;
+  line-height: 25px;
+  text-align: left;
+
+}
+ .reader_return .in_bottom .first input{ 
+  border: 1px solid burlywood;
+  width: 100%;
+  color:gray;
+  font-size: 12px;
+}
+/* 新书入库 */
+.out{
+  width: 100%; 
+  flex-direction: column;  
+}
+.out .in_top{
+  color: blue;
+  font-size: 14px;  
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+.out .in_top text{
+  margin: 8px;
+}
+.divide{
+  width: 100%;
+  height: 1px;
+  background: gray;
+}
+
+ .out .in_bottom{
+  display: flex;
+  flex-direction: column; 
+  margin-top: 20px;
+} 
+
+ .out .in_bottom .first{
+  width: 90%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-left: 20px; 
+}
+.out .in_bottom view{
+  margin: 10px;
+}
+ .out .in_bottom .first text{
+  font-size: 12px;
+  color: blueviolet;
+  width: 30%;
+  line-height: 25px;
+  text-align: left;
+
+}
+ .out .in_bottom .first input{ 
+  border: 1px solid burlywood;
+  width: 100%;
+  color:gray;
+  font-size: 12px;
+}
+ .out .in_bottom .first button{
+  font-size: 12px;
+  color: brown;  
+}
+ .out .in_bottom .first button:nth-child(1){ 
+    width: 100px; 
+    margin-left: 20px;
+    margin-right: 5px;
+}
+ .out .in_bottom .first button:nth-child(2){
+   width: 60px; 
+   margin-right: 15px;
+} 
+ /* 手动输入 */
+ /* .finger_input{
+  width: 100%; 
+  flex-direction: column;  
+} */
+.finger_input .in_bottom{ 
+  flex-direction: column; 
+  margin-top: 20px;  
+}  
+ .finger_input .in_bottom .print{ 
+   float: right;
+   text-align: center;
+   border: 1px solid blueviolet;
+   margin-left: 160px;
+   font-size: 12px;
+   background: gray;
+   color: brown; 
+   width: 60px;
+   height: 30px;
+   line-height: 30px;
+ }
+ .finger_input .in_bottom .first{
+  width: 90%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-left: 20px; 
+}
+.finger_input .in_bottom view{
+  margin: 10px;
+}
+ .finger_input .in_bottom .first text{
+  font-size: 12px;
+  color: blueviolet;
+  width: 30%;
+  line-height: 25px;
+  text-align: left;
+
+}
+ .finger_input .in_bottom .first input{ 
+  border: 1px solid burlywood;
+  width: 100%;
+  color:gray;
+  font-size: 12px;
+}
+ .finger_input .in_bottom .first button{
+  font-size: 12px;
+  color: brown;  
+}
+ .finger_input .in_bottom .first button:nth-child(1){ 
+    width: 100px; 
+    margin-left: 20px;
+    margin-right: 5px;
+}
+ .finger_input .in_bottom .first button:nth-child(2){
+   width: 60px; 
+   margin-right: 15px;
+} 
+/* 图书出库 */
+.out_book{
+  width: 100%; 
+  flex-direction: column;  
+}
+.out_book .in_bottom{
+  display: flex;
+  flex-direction: column; 
+  margin-top:20px;
+} 
+
+ .out_book .in_bottom .first{
+  width: 90%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-left: 20px; 
+}
+.out_book .in_bottom view{
+  margin: 10px;
+}
+ .out_book .in_bottom .first text{
+  font-size: 12px;
+  color: blueviolet;
+  width: 30%;
+  line-height: 25px;
+  text-align: left;
+
+}
+ .out_book .in_bottom .first input{ 
+  border: 1px solid burlywood;
+  width: 100%;
+  color:gray;
+  font-size: 12px;
+}
+ .out_book .in_bottom .first button{
+  font-size: 12px;
+  color: brown;  
+}
+ .out_book .in_bottom .first button:nth-child(1){ 
+    width: 100px; 
+    margin-left: 20px;
+    margin-right: 5px;
+}
+ .out_book .in_bottom .first button:nth-child(2){
+   width: 60px; 
+   margin-right: 15px;
+} 
+/* 修改图书信息 */
+.change{
+  width: 100%; 
+  flex-direction: column;   
+}
+.change .in_bottom{
+  display: flex;
+  flex-direction: column; 
+  margin-top: 20px;
+} 
+
+ .change .in_bottom .first{
+  width: 90%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-left: 20px; 
+}
+.change .in_bottom view{
+  margin: 10px;
+}
+ .change .in_bottom .first text{
+  font-size: 12px;
+  color: blueviolet;
+  width: 30%;
+  line-height: 25px;
+  text-align: left;
+
+}
+ .change .in_bottom .first input{ 
+  border: 1px solid burlywood;
+  width: 100%;
+  color:gray;
+  font-size: 12px;
+}
+ .change .in_bottom .first button{
+  font-size: 12px;
+  color: brown;  
+}
+ .change .in_bottom .first button:nth-child(1){ 
+    width: 100px; 
+    margin-left: 20px;
+    margin-right: 5px;
+}
+ .change .in_bottom .first button:nth-child(2){
+   width: 60px; 
+   margin-right: 15px;
+}  
+
+/* 查阅借阅信息 */ 
+.look{ 
+  flex-direction: column;
+  text-align: center;  
+}
+.look .top{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+.look .top input{
+  width: 80%;
+  color: black;
+  font-size: 10px;
+  border: 1px solid violet; 
+  border-radius: 5px; 
+}
+.look .top text{
+  color: royalblue;
+  font-size: 12px;
+  border: 1px solid violet;
+  width: 50px;  
+  margin-left: 10px; 
+  border-radius: 5px;
+  line-height: 25px; 
+}
+/* .look .record .center{
+  width: 96%;
+  margin-top: 5px;   
+}
+ .look .record .center .table { 
+  display: flex;
+  flex-direction: column; 
+  margin-left: 10px;
+}
+.look .record  .center .table .tr {
+   display: flex; 
+   width: 100%;  
+}
+ .look .record  .center .table .tr .td { 
+    font-size: 11px; 
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid darkgray;
+} 
+.look .record  .td:nth-child(1){
+  flex: 2;
+}
+ .look .record  .td:nth-child(2){
+  flex: 5;
+}  */
+/* 显示信息供搜索 */
+.display_record{ 
+  flex-direction: column;
+  text-align: center;  
+}
+.display_record .record .center{
+  width: 96%;
+  margin-top: 5px;   
+}
+ .display_record .record .center .table { 
+  display: flex;
+  flex-direction: column; 
+  margin-left: 10px;
+}
+.display_record .record  .center .table .tr {
+   display: flex; 
+   width: 100%;  
+}
+ .display_record .record  .center .table .tr .td { 
+    font-size: 11px; 
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid darkgray;
+} 
+.display_record .record  .td:nth-child(1){
+  flex: 2;
+}
+ .display_record .record  .td:nth-child(2){
+  flex: 5;
+} 
+/* 点击搜索后显示的信息 */
+.show_record{ 
+  flex-direction: column;
+  text-align: center;  
+}
+.show_record .record .center{
+  width: 96%;
+  margin-top: 5px;   
+}
+ .show_record .record .center .table { 
+  display: flex;
+  flex-direction: column; 
+  margin-left: 10px;
+}
+.show_record .record  .center .table .tr {
+   display: flex; 
+   width: 100%;  
+}
+ .show_record .record  .center .table .tr .td { 
+    font-size: 11px; 
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid darkgray;
+} 
+.show_record .record  .td:nth-child(1){
+  flex: 2;
+}
+ .show_record .record  .td:nth-child(2){
+  flex: 5;
+}   
+/* 管理员中心 */
+.manager_center{
+  width: 100%; 
+  flex-direction: column;  
+}
+.manager_center .update{
+  font-size: 14px; 
+  margin-left: 20px;
+  margin-top: 20px;
+  background: gray;
+  border: 1px solid gray;
+  width: 80px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  color: white; 
+}
+.manager_center .tip{
+  color: red;
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.manager_center .in_bottom{
+  display: flex;
+  flex-direction: column; 
+  margin-top: 10px;
+} 
+
+ .manager_center .in_bottom .first{
+  width: 90%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  margin-left: 20px; 
+}
+.manager_center .in_bottom view{
+  margin: 10px;
+}
+ .manager_center .in_bottom .first text{
+  font-size: 12px;
+  color: blueviolet;
+  width: 30%;
+  line-height: 25px;
+  text-align: left;
+
+}
+ .manager_center .in_bottom .first input{ 
+  border: 1px solid burlywood;
+  width: 100%;
+  color:gray;
+  font-size: 12px;
+}
+ .manager_center .in_bottom .first button{
+  font-size: 12px;
+  color: brown;  
+}
+ .manager_center .in_bottom .first button:nth-child(1){ 
+    width: 100px; 
+    margin-left: 20px;
+    margin-right: 5px;
+}
+ .manager_center .in_bottom .first button:nth-child(2){
+   width: 60px; 
+   margin-right: 15px;
+}   
+/* 查看读者信息 */
+.select{ 
+  flex-direction: column;
+  text-align: center; 
+}
+.select .top{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+.select .top input{
+  width: 80%;
+  color: black;
+  font-size: 10px;
+  border: 1px solid violet; 
+  border-radius: 5px; 
+}
+.select .top text{
+  color: royalblue;
+  font-size: 12px;
+  border: 1px solid violet;
+  width: 50px;  
+  margin-left: 10px; 
+  border-radius: 5px;
+  line-height: 22px; 
+}
+.look_reader_info{
+  width: 100%;
+  text-align: center;
+}
+.look_reader_info .look_table{ 
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+.look_reader_info .look_table .tr{ 
+  display: flex;
+  width: 100%; 
+}
+.look_reader_info .look_table .td { 
+    font-size: 11px; 
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid blueviolet; 
+} 
+.look_reader_info .look_table .td:nth-child(1){  
+  text-align: left;
+   padding-left:30px;
+   flex: 4;
+}
+.look_reader_info .look_table .td:nth-child(2){  
+  flex: 8;
+}

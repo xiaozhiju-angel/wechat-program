@@ -1,0 +1,75 @@
+.total{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+}
+.total .info_input{
+   width: 100%; 
+   margin:20px; 
+}
+.total .info_input .row_info{
+  width:100%;
+   display: flex;
+   flex-direction: row; 
+   margin: 10px;
+} 
+.total .info_input .row_info label{
+  width: 80px; 
+  font-size: 14px;
+   color: brown;
+   height: 30px;
+   line-height: 30px;
+}
+.total .info_input .row_info input{
+   border:1px solid gray;
+   width: 60%;
+   margin-left: 5px; 
+   color: burlywood;
+   font-size: 14px; 
+}
+.intro_type{
+  width: 100%; 
+  clear: both;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+ .intro_type .intro{
+  width:180px; 
+  color: white;
+  text-align: center;
+  font-size: 16px; 
+  background: burlywood;
+  height: 40px;
+  line-height: 40px; 
+}
+.regist{
+  width: 100%;
+  text-align: center; 
+}
+.regist button{
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  background: brown;
+  font-size: 12px; 
+  float: right;
+  margin-right: 53px;
+}
+
+.login_type{
+  width: 100%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  margin-top: 30px;
+}  
+.login_type image{
+  width:35px;
+  height: 35px;
+  margin: 5px;
+}
+
+

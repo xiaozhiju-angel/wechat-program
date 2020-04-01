@@ -1,0 +1,39 @@
+
+<view class='total'>
+<view class='info_input'>
+   <form bindsubmit='register'> 
+     <view class='row_info'>
+       <label>学号</label><input bindinput='inputuser' type='text' name='user'></input>
+     </view>
+     <view class='row_info'>
+        <label>姓名</label><input bindinput='inputname' type='text' name='name'></input> 
+       </view>
+      <view class='row_info'>
+        <label>身份证号码</label><input bindinput='inputidenti' type='text' name='identi'></input>
+       </view>
+      <view class='row_info'>
+        <label>电话号码</label><input type='text' name='tel'></input>
+      </view>
+    <view class='row_info'>
+         <label>密码</label><input bindinput='inputpass'  password type='text' name='pass'></input>
+    </view>
+    <view class='row_info'>
+         <label>确认密码</label><input bindinput='inputpass_again'  password type='text' name='pass_again'></input>
+    </view>
+    <view class='row_info'>
+    <label>邮箱</label><input bindinput='inputemaile' type='text' name='emaile'></input> 
+    </view>  
+    <view class='regist'>
+       <button form-type='submit'>提交</button>
+    </view> 
+  </form>
+  <view class='intro_type'>
+     <view class='intro'>可通过以下方式登录</view>
+  </view>
+  <view class='login_type'> 
+        <image src='/images/wechat.png'></image>  
+       <image src='/images/qq.png'></image>
+       <image src='/images/weibo.png'></image>
+  </view>
+  </view>
+  </view>

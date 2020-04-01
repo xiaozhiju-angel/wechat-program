@@ -1,0 +1,408 @@
+ <view class='border'>
+ <view class='top_total'>
+ <view class='top_left'><image src='/images/logo.png'></image></view>
+ <view class='top_right'>
+    <view class='systemadmin_info'>
+     <image src='/images/head.png'></image>
+     <view class='admin' bindtap='admin_center'>{{id}}</view>
+     <view class='exit' bindtap='back_first'>退出</view>
+    </view>
+ </view> 
+ </view> 
+ <view class='total'> 
+   <view class='left'>
+          <view bindtap='reader_borrow' style="color:{{color_readerborrow}}">读者借书</view>
+          <view bindtap='reader_return' style="color:{{color_readerreturn}}">读者还书</view>
+          <view bindtap='in_book' style="color:{{color_inbook}}">新书入库</view>
+          <view bindtap='out_book' style="color:{{color_outbook}}">图书出库</view>
+          <view bindtap='book_info' style="color:{{color_bookinfo}}">修改图书信息</view>
+          <view bindtap='query_borrow' style="color:{{color_queryborrow}}">查阅借阅记录</view>
+          <view bindtap='query_book' style="color:{{color_querybook}}">查阅图书信息</view> 
+          <view bindtap='admin_center' style="color:{{color_admincenter}}">管理员中心</view>
+   </view>
+   <view class='right'>
+       <!-- 读者借书 -->
+       <view class='reader_borrow' wx:if='{{reader_borrow}}'>
+       <form bindsubmit='readerborrow'>
+          <view class='in_bottom'>
+               <view type='text' class='first'>
+                  <label>借阅号</label>
+                  <input name='borrowid' value=''></input>
+               </view>
+               <view type='text' class='first'>
+                  <label>用户编号</label>
+                  <input name='name' value=''></input>
+               </view>
+               <view class='first'>
+                   <label>图书编号 </label>
+                  <input type='text' name='bookid' value=''></input>
+               </view>
+                <view class='first'>
+                  <button form-type='submit'>借阅</button>
+                  <button form-type='reset'>清空</button>
+               </view>
+           </view>
+        </form>
+        <view class='look_borrowinfo' wx:if='{{show_borrowinfo}}'>
+           <view class='table'>
+                <view class='tr'>
+                      <view class='td'>借阅号</view>
+                      <view class='td'>图书名</view>
+                      <view class='td'>是否借出</view> 
+                </view>
+                <view class='tr' wx:for='{{info}}'>
+                     <view class='td'>{{item.BorrowId}}</view>
+                      <view class='td'>{{item.BookName}}</view>
+                      <view class='td'>{{item.state}}</view>
+                </view>
+           </view> 
+           </view> 
+        </view>
+
+        <!-- 读者还书 -->
+        <view class='reader_return' wx:if='{{reader_return}}'>
+        <form bindsubmit='bookback'>
+         <view class='in_bottom'>
+               <view class='first'>
+                   <label>借阅号 </label>
+                  <input name='borrowid'></input>
+               </view>
+               <view class='btn_sure'><button form-type='submit'>确认归还</button></view> 
+         </view>
+        </form>
+        </view>
+       <!-- 新书入库 -->
+        <view class='out' wx:if='{{in_book}}' >
+            <view class='in_top'>
+                 <text bindtap='finger'style='color:{{Color}}'>手动输入</text>
+                 <text bindtap='batch_import' style='color:{{color}}'>批量导入</text>
+            </view>
+            <view class='divide'></view> 
+        </view> 
+        <!-- 手动输入 -->
+        <view class='finger_input' wx:if='{{finger}}'>
+        <form bindsubmit='newbookin'>
+        <view class='in_bottom'>
+               <view class='first'>
+                   <label>图书编号 </label>
+                  <input name='bookid' value=''></input>
+               </view>  
+               <view class='first'>
+                   <label>图书名称 </label>
+                  <input name='bookname'></input>
+               </view>
+               <view class='first'>
+                   <label>作者 </label>
+                  <input name='bookauthor'></input>
+               </view>
+               <view class='first'>
+                   <label>译者 </label>
+                  <input name='booktranslator'></input>
+               </view>
+               <view class='first'>
+                   <label>价格 </label>
+                  <input name='price'></input>
+               </view>
+               <view class='first'>
+                   <label>ISBN </label>
+                  <input name='code'></input>
+               </view>
+               <view class='first'>
+                   <label>出版社 </label>
+                  <input name='publishplace'></input>
+               </view>
+               <view class='first'>
+                   <label>出版日期 </label>
+                  <input name='publishtime'></input>
+               </view>
+               <view class='first'>
+                   <label>入库者 </label>
+                  <input name='inmysqler'></input>
+               </view>
+               <view class='first'>
+                   <label>入库时间 </label>
+                  <input name='inmysqlertime'></input>
+               </view>
+               <view class='first'>
+                   <label>状态</label>
+                  <input name='state'></input>
+               </view>
+               <view class='first'>
+                   <button form-type='submit'>确认添加</button> 
+                   <button form-type='reset'>取消</button> 
+               </view>
+            </view> 
+            </form>
+            </view>
+        <!-- 图书出库 -->
+        <view class='out_book' wx:if='{{out_book}}'>
+       <form bindsubmit='newbookout'>
+        <view class='in_bottom'>
+               <view class='first'>
+                  <label>图书编号</label>
+                  <input bindtap='bid_click' name='bookid' value='{{bid}}'></input>
+               </view>  
+               <view class='first'>
+                  <label>图书名称</label>
+                  <input name='bookname' ></input>
+               </view>
+               <view class='first'>
+                  <label>作者</label>
+                  <input name='bookauthor'></input>
+               </view>
+               <view class='first'>
+                  <label>译者</label>
+                  <input name='booktranslator'></input>
+               </view>
+               <view class='first'>
+                  <label>价格</label>
+                  <input name='price'></input>
+               </view>
+               <view class='first'>
+                  <label>ISBN</label>
+                  <input name='code'></input>
+               </view>
+               <view class='first'>
+                  <label>出版社</label>
+                  <input name='publishplace'></input>
+               </view>
+               <view class='first'>
+                  <label>出版日期</label>
+                  <input name='publishtime'></input>
+               </view>
+               <view class='first'>
+                  <label>入库者</label>
+                  <input name='inmysqler'></input>
+               </view>
+               <view class='first'>
+                   <button form-type='submit'>确认删除</button> 
+                   <button form-type='reset'>取消</button> 
+               </view>
+            </view> 
+            </form>
+            </view>
+            <!-- 修改图书信息 -->
+        <view class='change' wx:if='{{book_info}}'>
+        <form bindsubmit='changebookinfo'>
+        <view class='in_bottom'>
+               <view class='first'>
+                  <label>图书编号</label>
+                  <input bindtap='bid_click' name='bookid' value='{{bid}}'></input>
+               </view>  
+               <view class='first'>
+                  <label>图书名称</label>
+                  <input name='bookname'></input>
+               </view>
+               <view class='first'>
+                  <label>作者</label>
+                  <input name='bookauthor'></input>
+               </view>
+               <view class='first'>
+                  <label>译者</label>
+                  <input name='booktranslator'></input>
+               </view>
+               <view class='first'>
+                  <label>价格</label>
+                  <input name='price'></input>
+               </view>
+               <view class='first'>
+                  <label>ISBN</label>
+                  <input name='code'></input>
+               </view>
+               <view class='first'>
+                  <label>出版社</label>
+                  <input name='publishplace'></input>
+               </view>
+               <view class='first'>
+                  <label>出版日期</label>
+                  <input name='publishtime'></input>
+               </view>
+               <view class='first'>
+                  <label>入库者</label>
+                  <input name='inmysqler'></input>
+               </view>
+               <view class='first'>
+                   <label>入库时间 </label>
+                  <input name='inmysqlertime'></input>
+               </view>
+               <view class='first'>
+                   <label>状态</label>
+                  <input name='state'></input>
+               </view>
+               <view class='first'>
+                   <button form-type='submit'>提交修改</button> 
+                   <button form-type='reset'>取消</button> 
+               </view>
+            </view> 
+            </form>
+            </view>
+            <!-- 查阅借阅记录 -->
+            <view class='look' wx:if='{{query_borrow}}' >
+               <form bindsubmit='searchrecords'>
+                <view class='top'>
+                   <input type='text' bindtap='cleardata' name='inputinfo' value='{{inputvalue}}'></input>
+                   <button  class='search' form-type='submit' >搜索</button> 
+                </view> 
+               </form>
+            </view> 
+            <!-- show_record显示时隐藏 -->
+             <!-- <view class='display_record' wx:if='{{display_record}}'>
+            <view class='record'>
+               <view class='center'>
+                  <view class='table'> 
+                      <view class='tr ' wx:for='{{col}}'> 
+                          <view class='td'>{{item.name}}</view>
+                          <view class='td'>{{item.info}}</view> 
+                      </view>
+                      
+                  </view>
+                </view>
+               </view>
+              </view>  -->
+            <!-- 点击搜索显示 -->
+             <view class='show_record' wx:if='{{show_record}}'>
+             <view class='record'>
+               <view class='center'>
+                  <view class='table'> 
+                        <view class='tr ' > 
+                          <view class='td'>书名</view>
+                          <view class='td'>价格</view>
+                          <view class='td'>ISBN编码</view>  
+                          <view class='td'>借阅状态</view>  
+                      </view>
+                      <view class='tr ' wx:for='{{show_info}}'> 
+                          <view class='td'>{{item.BookName}}</view>
+                          <view class='td'>{{item.price}}</view>
+                          <view class='td'>{{item.ISBNCode}}</view>  
+                          <view class='td'>{{item.State}}</view> 
+                      </view>
+                  </view>
+                </view>
+               </view>
+            </view>
+
+                <view class='show_record' wx:if='{{show_b}}'>
+             <view class='record'>
+               <view class='center'>
+                  <view class='table'> 
+                        <view class='tr ' > 
+                          <view class='td'>书名</view>
+                          <view class='td'>作者</view>
+                          <view class='td'>出版社</view>  
+                          <view class='td'>借阅状态</view>  
+                      </view>
+                      <view class='tr ' wx:for='{{showbook}}'> 
+                          <view class='td'>{{item.BookName}}</view>
+                          <view class='td'>{{item.Author}}</view>
+                          <view class='td'>{{item.PublishCompany}}</view>  
+                          <view class='td'>{{item.State}}</view> 
+                      </view>
+                  </view>
+                </view>
+               </view>
+            </view>
+           <view class='show_record' wx:if='{{show_user}}'>
+             <view class='record'>
+               <view class='center'>
+                  <view class='table'> 
+                        <view class='tr ' > 
+                          <view class='td'>系别</view>
+                          <view class='td'>专业</view>
+                          <view class='td'>电话</view>  
+                          <!-- <view class='td'>邮箱</view>   -->
+                      </view>
+                      <view class='tr ' wx:for='{{showuser}}'> 
+                          <view class='td'>{{item.Departments}}</view>
+                          <view class='td'>{{item.Major}}</view>
+                          <view class='td'>{{item.phone}}</view>  
+                          <!-- <view class='td'>{{item.Email}}</view>  -->
+                      </view>
+                  </view>
+                </view>
+               </view>
+            </view> 
+
+ 
+
+            <!-- 查阅图书信息 --> 
+            <view class='select'  wx:if='{{query_book}}'>
+            <form bindsubmit='search_book'>
+             <view class='top'>
+                   <input bindtap='clearinfo' name='inputinfo'  value='{{input}}'></input>
+                   <button class='search' form-type='submit'>搜索</button> 
+               </view>
+             </form>
+            <!-- <view class='look_reader_info' >
+               <view class='look_table'>
+                    <view class='tr' wx:for='{{book}}'>
+                             <view class='td'>{{item.name}}</view>
+                             <view class='td'>{{item.info}}</view>
+                               <view class='td'>{{item.ISBNCode}}</view>
+                             <view class='td'>{{item.State}}</view> 
+                    </view>
+               </view>
+            </view> -->
+            </view> 
+            <!-- 点击搜索显示 -->
+             <view class='show_record' wx:if='{{show_book}}'>
+             <view class='record'>
+               <view class='center'>
+                  <view class='table'> 
+                        <view class='tr ' > 
+                          <view class='td'>书名</view>
+                          <view class='td'>作者</view>
+                          <view class='td'>出版社</view>  
+                          <view class='td'>借阅状态</view>  
+                        </view>
+                      <view class='tr ' wx:for='{{show_bookinfo}}'> 
+                          <view class='td'>{{item.BookName}}</view>
+                          <view class='td'>{{item.Author}}</view>
+                          <view class='td'>{{item.PublishCompany}}</view>  
+                          <view class='td'>{{item.State}}</view> 
+                      </view>
+                  </view>
+                </view>
+               </view>
+            </view>
+        <!-- 管理员中心 -->
+        <view class='manager_center' wx:if='{{admin_center}}' >
+           <view class='update'>修改资料 </view>
+           <view class='tip'>原密码必填。不修改密码时，新密码、确认密码留空</view>
+         <form bindsubmit='managercenter'>
+        <view class='in_bottom'>
+                <view class='first'>
+                  <label>用户编号</label>
+                  <input name='adid'  value=''></input>
+               </view>
+               <view class='first'>
+                  <label>原密码</label>
+                  <input name='adpass'  value=''></input>
+               </view>
+               <view class='first'>
+                  <label>新密码</label>
+                  <input name='adnewpass'></input>
+               </view>
+               <view class='first'>
+                  <label>确认密码</label>
+                  <input name='againpass'></input>
+               </view> 
+               <view class='first'>
+                  <label>电话</label>
+                  <input name='admintel'></input>
+               </view>
+               <view class='first'>
+                  <label>邮箱</label>
+                  <input name='adminemaile'></input>
+               </view> 
+               <view class='first'>
+                   <button form-type='submit'>确认修改</button> 
+                   <button form-type='reset'>取消</button> 
+               </view>
+            </view>
+            </form>
+         </view> 
+   </view> 
+ </view>
+    <view class='bottom'>@Copyright重庆理工大学中山图书馆</view> 
+
+ </view>
